@@ -829,7 +829,10 @@ public class StorageManager {
 			String setter = player.getName() + "<Bind" + slot + ">";
 			config.setKey(setter, null);
 		} else if (StorageManager.useMySQL) {
-
+			String setter = player.getName() + "<Bind" + slot + ">";
+			String removeBind = "DELETE FROM bending_ability WHERE player ='"
+				+ player.getName() + "' AND setter = '"+setter+"'";
+			this.MySql.delete(removeBind);
 		}
 
 	}
@@ -838,6 +841,11 @@ public class StorageManager {
 		if (StorageManager.useFlatFile) {
 			String setter = player.getName() + "<Bind" + mat.name() + ">";
 			config.setKey(setter, null);
+		} else if (StorageManager.useMySQL) {
+			String setter = player.getName() + "<Bind" + mat.name() + ">";
+			String removeBind = "DELETE FROM bending_ability WHERE player ='"
+				+ player.getName() + "' AND setter = '"+setter+"'";
+			this.MySql.delete(removeBind);
 		}
 	}
 
