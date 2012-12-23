@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
 import main.Metrics.Graph;
-import net.minecraft.server.EntityFireball;
+import net.minecraft.server.v1_4_6.EntityFireball;
 
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
